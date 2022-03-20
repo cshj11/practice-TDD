@@ -23,7 +23,7 @@ public class testMultiplication {
     -- 공용 equals
     공용 times
     -- Franc과 Dollar 비교하기
-    통화?
+    -- 통화?
     */
 
     @Test
@@ -40,6 +40,12 @@ public class testMultiplication {
         assertTrue(Money.franc(5).equals(Money.franc(5)));
         assertFalse(Money.franc(5).equals(Money.franc(6)));
         assertFalse(Money.franc(5).equals(Money.dollar(5)));
+    }
+
+    @Test
+    public void testCurrency(){
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("CHF", Money.franc(1).currency());
     }
 }
 
