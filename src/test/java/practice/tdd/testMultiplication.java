@@ -5,6 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class testMultiplication {
+    /*
+    다중 통화를 지원하는 보고서 만들기
+
+    < 할일 목록 >
+    $5 + 10CHF = $10(환율이 2:1일 경우)
+    $5 * 2 = $10
+    */
 
     @Test
     public void testMultiplication(){
@@ -14,3 +21,4 @@ public class testMultiplication {
     }
 
 }
+
