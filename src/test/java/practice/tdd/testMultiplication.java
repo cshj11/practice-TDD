@@ -19,7 +19,7 @@ public class testMultiplication {
     Equal null
     Equal object
     -- 5CHF * 2 = 10CHF
-    -- Dollar/Franc 중복
+    ---- Dollar/Franc 중복
     -- 공용 equals
     -- 공용 times
     -- Franc과 Dollar 비교하기
@@ -37,8 +37,6 @@ public class testMultiplication {
     public void testEquality(){
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
         assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-        assertTrue(Money.franc(5).equals(Money.franc(5)));
-        assertFalse(Money.franc(5).equals(Money.franc(6)));
         assertFalse(Money.franc(5).equals(Money.dollar(5)));
     }
 
@@ -47,5 +45,6 @@ public class testMultiplication {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
     }
+
 }
 
