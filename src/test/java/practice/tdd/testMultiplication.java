@@ -2,7 +2,7 @@ package practice.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class testMultiplication {
     /*
@@ -14,6 +14,10 @@ public class testMultiplication {
     amount를 private으로 만들기
     -- Dollar 부작용(side effect)?
     Money 반올림?
+    -- equals()
+    hashcode()
+    Equal null
+    Equal object
     */
 
     @Test
@@ -25,5 +29,10 @@ public class testMultiplication {
         assertEquals(15,product.amount);
     }
 
+    @Test
+    public void testEquality(){
+        assertTrue(new Dollar(5).equals(new Dollar(5)));
+        assertFalse(new Dollar(5).equals(new Dollar(6)));
+    }
 }
 
