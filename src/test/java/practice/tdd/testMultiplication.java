@@ -12,15 +12,17 @@ public class testMultiplication {
     $5 + 10CHF = $10(환율이 2:1일 경우)
     -- $5 * 2 = $10
     amount를 private으로 만들기
-    Dollar 부작용(side effect)?
+    -- Dollar 부작용(side effect)?
     Money 반올림?
     */
 
     @Test
     public void testMultiplication(){
         Dollar five = new Dollar(5);
-        five.times(2);
-        assertEquals(10,five.amount);
+        Dollar product = five.times(2);
+        assertEquals(10,product.amount);
+        product = five.times(3);
+        assertEquals(15,product.amount);
     }
 
 }
