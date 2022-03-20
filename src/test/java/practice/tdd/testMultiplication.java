@@ -25,6 +25,10 @@ public class testMultiplication {
     -- Franc과 Dollar 비교하기
     -- 통화?
     $5 + $5 = $10
+    $5 + $5에서 Money 반환하가
+    -- Bank.reduce(Money)
+    Money에 대한 통화 변환을 수행하는 Reduce
+    Reduce(Bank, String)
     */
 
     @Test
@@ -54,6 +58,30 @@ public class testMultiplication {
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(10), reduced);
+    }
+
+    @Test
+    public void testPlusReturnsSum(){
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum = (Sum) result;
+        assertEquals(five, sum.augend);
+        assertEquals(five, sum.addend);
+    }
+
+    @Test
+    public void testReduceSum(){
+        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(7), result);
+    }
+
+    @Test
+    public void testReduceMoney(){
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        assertEquals(Money.dollar(1), result);
     }
 }
 
